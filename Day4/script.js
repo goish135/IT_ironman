@@ -11,8 +11,10 @@ map.fitBounds(p1p2p3p4);
 marker3 = L.Marker.movingMarker(p1p2p3p4,[2000, 3000, 2000], {autostart: true,icon: marker3}).addTo(map);
 L.polyline(p1p2p3p4, {color: 'red'}).addTo(map);
 
+
 marker3.once('click', function () {
-    marker3.start();
+
+    marker3.resume();
     marker3.on('click', function() {
         if (marker3.isRunning()) {
             marker3.closePopup();
@@ -39,7 +41,7 @@ var marker1 = L.icon({
 var p123456 = [[24.287939, 120.511924], [24.618813,120.731719],
 [25.147408, 121.750569], [24.033423, 121.626818], [21.962351,120.778510],[22.621061,120.256785],[24.287939, 120.511924]];
 
-marker1 = L.Marker.movingMarker(p123456,[2000, 2000, 2000, 2000,2000,2000], {autostart: true, loop: true,icon: marker1}).addTo(map);
+marker1 = L.Marker.movingMarker(p123456,[10000, 10000, 10000, 10000,10000,10000], {autostart: true, loop: true,icon: marker1}).addTo(map);
 marker1.loops = 0;
 marker1.bindPopup('', {closeOnClick: false});
 marker1.on('loop', function(e) {
