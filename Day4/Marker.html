@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Layers Control Tutorial - Leaflet</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+    <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		#map {
+			width: 600px;
+			height: 400px;
+		}
+	</style>
+	
+</head>
+<body>
+
+<div id='map' style="width: 100%; height: 100vh;"></div>
+
+<script>
+	var cities = L.layerGroup();
+
+	L.marker([22.627560 , 120.267411]).bindPopup('中山電資大樓').addTo(cities),
+	L.marker([22.689343 ,120.309121]).bindPopup('左營').addTo(cities),
+	L.marker([24.112074,120.615684]).bindPopup('新烏日').addTo(cities),
+	L.marker([24.263936,120.569167]).bindPopup(' 清水火車站').addTo(cities);
+
+ 
+    var toner = new L.StamenTileLayer("toner", { detectRetina: true })
+    var terrain = new L.StamenTileLayer("terrain", { detectRetina: true })
+    var watercolor = new L.StamenTileLayer("watercolor", { detectRetina: true })
+                        
+                                
+                    
+	var map = L.map('map', {
+		center: [22.627560 , 120.267411],
+		zoom: 10,
+		layers: [toner, cities]
+	});
+ 
+    var baseLayers = {
+        "toner": toner,
+        "terrain": terrain,
+        "watercolor":watercolor
+    };
+
+	var overlays = {
+		"Cities": cities
+	};
+
+	L.control.layers(baseLayers, overlays).addTo(map);
+</script>
+<script type="text/javascript" src="MovingMarker.js"></script>
+<script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
