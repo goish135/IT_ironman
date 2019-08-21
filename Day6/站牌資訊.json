@@ -1,0 +1,360 @@
+[
+  {
+    "RouteUID": "THB9018",
+    "RouteID": "9018",
+    "RouteName": {
+      "Zh_tw": "9018",
+      "En": "9018"
+    },
+    "Operators": [
+      {
+        "OperatorID": "25",
+        "OperatorName": {
+          "Zh_tw": "和欣客運",
+          "En": "Ho-Hsin Bus Co., Ltd."
+        },
+        "OperatorCode": "HoHsinBus",
+        "OperatorNo": "0801"
+      }
+    ],
+    "SubRouteUID": "THB901801",
+    "SubRouteID": "901801",
+    "SubRouteName": {
+      "Zh_tw": "90180",
+      "En": "90180"
+    },
+    "Direction": 0,
+    "Stops": [
+      {
+        "StopUID": "THB143810",
+        "StopID": "143810",
+        "StopName": {
+          "Zh_tw": "臺中火車站(東站)",
+          "En": "TRA Taichung Station(East Station)"
+        },
+        "StopBoarding": 1,
+        "StopSequence": 1,
+        "StopPosition": {
+          "PositionLat": 24.135992,
+          "PositionLon": 120.686298
+        },
+        "StationID": "33158",
+        "StationNameID": "401－020",
+        "LocationCityCode": "TXG"
+      },
+      {
+        "StopUID": "THB143895",
+        "StopID": "143895",
+        "StopName": {
+          "Zh_tw": "干城站",
+          "En": "Gancheng Station"
+        },
+        "StopBoarding": 1,
+        "StopSequence": 2,
+        "StopPosition": {
+          "PositionLat": 24.142145,
+          "PositionLon": 120.685771
+        },
+        "StationID": "103425",
+        "StationNameID": "400－023",
+        "LocationCityCode": "TXG"
+      },
+      {
+        "StopUID": "THB214865",
+        "StopID": "214865",
+        "StopName": {
+          "Zh_tw": "朝馬站",
+          "En": "Chouma Station"
+        },
+        "StopBoarding": 1,
+        "StopSequence": 3,
+        "StopPosition": {
+          "PositionLat": 24.170675,
+          "PositionLon": 120.637357
+        },
+        "StationID": "26847",
+        "StationNameID": "407－038",
+        "LocationCityCode": "TXG"
+      },
+      {
+        "StopUID": "THB143818",
+        "StopID": "143818",
+        "StopName": {
+          "Zh_tw": "鹿港站",
+          "En": "Lugang Station"
+        },
+        "StopBoarding": -1,
+        "StopSequence": 4,
+        "StopPosition": {
+          "PositionLat": 24.05624,
+          "PositionLon": 120.43451
+        },
+        "StationID": "104902",
+        "StationNameID": "505－001",
+        "LocationCityCode": "CHA"
+      }
+    ],
+    "UpdateTime": "2019-08-21T04:16:01+08:00",
+    "VersionID": 196
+  },
+  {
+    "RouteUID": "THB9018",
+    "RouteID": "9018",
+    "RouteName": {
+      "Zh_tw": "9018",
+      "En": "9018"
+    },
+    "Operators": [
+      {
+        "OperatorID": "55",
+        "OperatorName": {
+          "Zh_tw": "中鹿客運",
+          "En": "Chung-Lu Bus Co., Ltd."
+        },
+        "OperatorCode": "ChungluBus",
+        "OperatorNo": "0402"
+      }
+    ],
+    "SubRouteUID": "THB901801",
+    "SubRouteID": "901801",
+    "SubRouteName": {
+      "Zh_tw": "90180",
+      "En": "90180"
+    },
+    "Direction": 0,
+    "Stops": [
+      {
+        "StopUID": "THB143810",
+        "StopID": "143810",
+        "StopName": {
+          "Zh_tw": "臺中火車站(東站)",
+          "En": "TRA Taichung Station(East Station)"
+        },
+        "StopBoarding": 1,
+        "StopSequence": 1,
+        "StopPosition": {
+          "PositionLat": 24.135992,
+          "PositionLon": 120.686298
+        },
+        "StationID": "33158",
+        "StationNameID": "401－020",
+        "LocationCityCode": "TXG"
+      },
+      {
+        "StopUID": "THB143895",
+        "StopID": "143895",
+        "StopName": {
+          "Zh_tw": "干城站",
+          "En": "Gancheng Station"
+        },
+        "StopBoarding": 1,
+        "StopSequence": 2,
+        "StopPosition": {
+          "PositionLat": 24.142145,
+          "PositionLon": 120.685771
+        },
+        "StationID": "103425",
+        "StationNameID": "400－023",
+        "LocationCityCode": "TXG"
+      },
+      {
+        "StopUID": "THB214865",
+        "StopID": "214865",
+        "StopName": {
+          "Zh_tw": "朝馬站",
+          "En": "Chouma Station"
+        },
+        "StopBoarding": 1,
+        "StopSequence": 3,
+        "StopPosition": {
+          "PositionLat": 24.170675,
+          "PositionLon": 120.637357
+        },
+        "StationID": "26847",
+        "StationNameID": "407－038",
+        "LocationCityCode": "TXG"
+      },
+      {
+        "StopUID": "THB143818",
+        "StopID": "143818",
+        "StopName": {
+          "Zh_tw": "鹿港站",
+          "En": "Lugang Station"
+        },
+        "StopBoarding": -1,
+        "StopSequence": 4,
+        "StopPosition": {
+          "PositionLat": 24.05624,
+          "PositionLon": 120.43451
+        },
+        "StationID": "104902",
+        "StationNameID": "505－001",
+        "LocationCityCode": "CHA"
+      }
+    ],
+    "UpdateTime": "2019-08-21T04:16:01+08:00",
+    "VersionID": 196
+  },
+  {
+    "RouteUID": "THB9018",
+    "RouteID": "9018",
+    "RouteName": {
+      "Zh_tw": "9018",
+      "En": "9018"
+    },
+    "Operators": [
+      {
+        "OperatorID": "25",
+        "OperatorName": {
+          "Zh_tw": "和欣客運",
+          "En": "Ho-Hsin Bus Co., Ltd."
+        },
+        "OperatorCode": "HoHsinBus",
+        "OperatorNo": "0801"
+      }
+    ],
+    "SubRouteUID": "THB901802",
+    "SubRouteID": "901802",
+    "SubRouteName": {
+      "Zh_tw": "90180",
+      "En": "90180"
+    },
+    "Direction": 1,
+    "Stops": [
+      {
+        "StopUID": "THB143818",
+        "StopID": "143818",
+        "StopName": {
+          "Zh_tw": "鹿港站",
+          "En": "Lugang Station"
+        },
+        "StopBoarding": 1,
+        "StopSequence": 1,
+        "StopPosition": {
+          "PositionLat": 24.05624,
+          "PositionLon": 120.43451
+        },
+        "StationID": "104902",
+        "StationNameID": "505－001",
+        "LocationCityCode": "CHA"
+      },
+      {
+        "StopUID": "THB269973",
+        "StopID": "269973",
+        "StopName": {
+          "Zh_tw": "朝馬",
+          "En": "Chaoma Station"
+        },
+        "StopBoarding": -1,
+        "StopSequence": 2,
+        "StopPosition": {
+          "PositionLat": 24.170317,
+          "PositionLon": 120.637241
+        },
+        "StationID": "104959",
+        "StationNameID": "407－038",
+        "LocationCityCode": "TXG"
+      },
+      {
+        "StopUID": "THB285246",
+        "StopID": "285246",
+        "StopName": {
+          "Zh_tw": "臺中火車站(東站)",
+          "En": "TRA Taichung Station(East Station)"
+        },
+        "StopBoarding": -1,
+        "StopSequence": 3,
+        "StopPosition": {
+          "PositionLat": 24.135929,
+          "PositionLon": 120.686518
+        },
+        "StationID": "104387",
+        "StationNameID": "401－020",
+        "LocationCityCode": "TXG"
+      }
+    ],
+    "UpdateTime": "2019-08-21T04:16:01+08:00",
+    "VersionID": 196
+  },
+  {
+    "RouteUID": "THB9018",
+    "RouteID": "9018",
+    "RouteName": {
+      "Zh_tw": "9018",
+      "En": "9018"
+    },
+    "Operators": [
+      {
+        "OperatorID": "55",
+        "OperatorName": {
+          "Zh_tw": "中鹿客運",
+          "En": "Chung-Lu Bus Co., Ltd."
+        },
+        "OperatorCode": "ChungluBus",
+        "OperatorNo": "0402"
+      }
+    ],
+    "SubRouteUID": "THB901802",
+    "SubRouteID": "901802",
+    "SubRouteName": {
+      "Zh_tw": "90180",
+      "En": "90180"
+    },
+    "Direction": 1,
+    "Stops": [
+      {
+        "StopUID": "THB143818",
+        "StopID": "143818",
+        "StopName": {
+          "Zh_tw": "鹿港站",
+          "En": "Lugang Station"
+        },
+        "StopBoarding": 1,
+        "StopSequence": 1,
+        "StopPosition": {
+          "PositionLat": 24.05624,
+          "PositionLon": 120.43451
+        },
+        "StationID": "104902",
+        "StationNameID": "505－001",
+        "LocationCityCode": "CHA"
+      },
+      {
+        "StopUID": "THB269973",
+        "StopID": "269973",
+        "StopName": {
+          "Zh_tw": "朝馬",
+          "En": "Chaoma Station"
+        },
+        "StopBoarding": -1,
+        "StopSequence": 2,
+        "StopPosition": {
+          "PositionLat": 24.170317,
+          "PositionLon": 120.637241
+        },
+        "StationID": "104959",
+        "StationNameID": "407－038",
+        "LocationCityCode": "TXG"
+      },
+      {
+        "StopUID": "THB285246",
+        "StopID": "285246",
+        "StopName": {
+          "Zh_tw": "臺中火車站(東站)",
+          "En": "TRA Taichung Station(East Station)"
+        },
+        "StopBoarding": -1,
+        "StopSequence": 3,
+        "StopPosition": {
+          "PositionLat": 24.135929,
+          "PositionLon": 120.686518
+        },
+        "StationID": "104387",
+        "StationNameID": "401－020",
+        "LocationCityCode": "TXG"
+      }
+    ],
+    "UpdateTime": "2019-08-21T04:16:01+08:00",
+    "VersionID": 196
+  }
+]

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>台中市公車動態資訊</title>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    <link rel="stylesheet" href="L.Control.Sidebar.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+   <script type="text/javascript" src="Lib\sha1.js"></script>
+
+  </head>
+  <body>
+
+
+
+
+     <div id="mapid" style="width: 100%; height: 100vh;"></div>
+     <div id="sidebar">
+       <h1>leaflet-sidebar</h1>
+       <input type="radio" name="gr" value="0" onclick="val(0)">GO
+       <input type="radio" name="gr" value="1" onclick="val(1)">BACK
+       <button type="button" onclick="sidebar.hide();">Close</button>
+     </div>
+  <script src="L.Control.Sidebar.js"></script>
+
+  <script src="app.js"></script>
+  <script>
+    var sidebar = L.control.sidebar('sidebar', {
+      position: 'left'
+     });
+
+    mymap.addControl(sidebar);
+        setTimeout(function () {
+        sidebar.show();
+    }, 3000);
+
+    var marker = L.marker([24.144596, 120.672539]).addTo(mymap).on('click', function () {
+      sidebar.toggle();
+    });
+  </script>
+  <script>
+     // create a red polyline from an array of LatLng points
+     var latlngs =
+     [
+        [24.135992, 120.686298],
+        [24.142145, 120.685771],
+        [24.170675, 120.637357],
+        [24.05624,  120.43451]
+
+     ];
+    var polyline = L.polyline(latlngs, {color: 'red'}).addTo(mymap);
+    // zoom the map to the polyline
+    mymap.fitBounds(polyline.getBounds());
+
+  </script>
+
+
+
+  
+</body>
+</html>
