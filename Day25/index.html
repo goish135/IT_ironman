@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>友廷等公車</title>
+
+    <link rel="stylesheet" href="L.Control.Sidebar.css" />
+    <link rel="stylesheet" href="L.Control.Bar.css" />
+   
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+    
+    
+   <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+   <script type="text/javascript" src="Lib\sha1.js"></script>
+   <script src="./marker-direction.js"></script>
+    <link rel="stylesheet" href="Control.FullScreen.css" />
+	<script src="Control.FullScreen.js"></script>
+   <style>
+   .labelClass{
+white-space:nowrap;
+text-shadow: 0 0 0.1em black, 0 0 0.1em black,
+0 0 0.1em black,0 0 0.1em black,0 0 0.1em;
+color: yellow
+
+}
+   </style>
+
+  <style>
+  #myInput {
+  background-image: url('https://i.imgur.com/NA1Mcr9.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 50%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+ul {
+  list-style: none; }
+  .card {
+  width: 100%;
+  background-color: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px 60px 10px 5px;
+  margin-bottom: 20px; }
+  .card:hover {
+    background-color: #b3ffe2; }
+  .card a {
+    text-decoration: none; }
+  .card p {
+    font-weight: 900;
+    margin: 0px 50 10px 0; }
+    .bus-way {
+  color: #777;
+  font-size: 16px; }
+
+.bus-num {
+  color: #444;
+  font-size: 16px; }
+  #bus-way-chose {
+  width: auto;
+  margin: 0 auto 30px auto;
+  font-size: 18px; }
+
+
+
+  </style>
+  </head>
+  <body>
+
+
+
+
+     <div id="mapid" style="width: 100%; height: 100vh;"></div>
+     <div id="sidebar">
+       <div id="bus9018">
+       <h1>AAA</h1>
+       <input type="radio" id="go" name="gr" value="0" onclick="val(0)" checked="true"><font size="3">往鹿港</font>
+       <input type="radio" id="back" name="gr" value="1" onclick="val(1)"><font size="3">往台中</font>
+       <button type="button" onclick="sidebar.hide();">Close Sidebar</button>
+       <button type="button" onclick="taichung()">Turn on</button>
+       <hr>
+       <p id="s1"><span id="stop1" style="color:white;border-radius:3px;background-color:red;margin-right:5px;font-weight:bold;"><font size="3">X</font></span></span><font size="3">台中火車站(東站)</font><span id='pn1'style="margin-left:6px"></span></p>
+       <p id="s2"><span id="stop2" style="color:white;border-radius:3px;background-color:orange;margin-right:5px;font-weight:bold;"><font size="3">X</font></span><font size="3">干城站</font><span id='pn2'style="margin-left:6px"></span></p>
+       <p id="sX"><span id="stopX" style="color:white;border-radius:3px;background-color:#77DDFF;margin-right:5px;font-weight:bold;"><font size="3">X</font></span><font size="3">NTCU</font><span id='pnX'style="margin-left:6px"></span><span style="margin-left:6px">*測試版v1</span></p>
+       <p id="sX2"><span id="stopX2" style="color:white;border-radius:3px;background-color:#77DDFF;margin-right:5px;font-weight:bold;"><font size="3">X</font></span><font size="3">NTCU</font><span id='pnX2'style="margin-left:6px"></span><span style="margin-left:6px">*測試版v2</span></p>
+       <p id="s3"><span id="stop3" style="color:white;border-radius:3px;background-color:#EEEE00;margin-right:5px;font-weight:bold;"><font size="3">X</font></span><font size="3">朝馬站</font><span id='pn3'style="margin-left:6px"></span></p>
+       <p id="s4"><span id="stop4" style="color:white;border-radius:3px;background-color:green;margin-right:5px;font-weight:bold;"><font size="3">X</font></span><font size="3">鹿港站</font><span id='pn4'style="margin-left:6px"></span></p>
+
+       <p id="s5"><span id="sop1" style="color:white;border-radius:3px;background-color:green;margin-right:5px;font-weight:bold;"><font size="3">X</font></span><font size="3">鹿港站</font><span id='pnb1'style="margin-left:6px"></span></p>
+       <p id="s6"><span id="sop2" style="color:white;border-radius:3px;background-color:#EEEE00;margin-right:5px;font-weight:bold;"><font size="3">X</font></span><font size="3">朝馬站</font><span id='pnb2'style="margin-left:6px"></span></p>
+       <p id="s7"><span id="sop3" style="color:white;border-radius:3px;background-color:red;margin-right:5px;font-weight:bold;"><font size="3">X</font></span></span><font size="3">台中火車站(東站)</font><span id='pnb3'style="margin-left:6px"></span></p>
+       
+       </div>
+           <div id="taichung">
+              <p><input type="text" class="search" id="myInput" onclick="updatemap(this.value)"  placeholder="Search for routes.." title="Type in a route" value=''>  <button style="margin-left:20px" type="button" onclick="tunoff()">Turn off</button></p>
+              <ul id="list"></ul>
+              <div id="content">
+              <header id="header">
+              
+              <p id="now-position">您現在的位置</p>
+              
+              <h3>請選擇行車方向</h3>
+              <div id="bus-way-chose">
+              <button id="go1" type="button" class="btn" onclick="chdir('go')"> 往</button>
+              <button id="back1" type="button" class="btn" onclick="chdir('back')"> 往</button>
+              </div>
+              </header>
+             
+              
+              <div>
+              <ul id="bus-way-list">
+              </ul>
+     
+              </div>
+              </div>
+          </div>
+       
+       <!--<ul id="favorite"></ul>-->
+       
+     </div>
+     <div id = "bar"></div>
+ 
+  <script>
+  function gosearch()
+  {
+     var inputV;
+     inputV = document.getElementById('myInput')
+     console.log(inputV.value)
+  }
+  </script>  
+  <script src="L.Control.Sidebar.js"></script>
+  <script src="L.Control.Bar.js"></script>
+
+  <script src="app.js"></script>
+ 
+  <script type="text/javascript" src="MovingMarker.js"></script>
+  <script>
+    var sidebar = L.control.sidebar('sidebar', {
+      position: 'left'
+     });
+
+    mymap.addControl(sidebar);
+   
+
+    var marker = L.marker([24.144596, 120.672539]).addTo(mymap).on('click', function () {
+      sidebar.toggle();
+    });
+   
+
+L.divIcon({
+  className: "labelClass",
+  html: "textToDisplay"
+})
+    var createLabelIcon = function(labelClass,labelText){
+return L.divIcon({
+className: labelClass,
+html: labelText
+})
+}
+    L.marker(new L.LatLng(24.135992, 120.686298), {icon:createLabelIcon("labelClass","臺中火車站(東站)")}).addTo(mymap);
+    L.marker(new L.LatLng(24.142145, 120.685771), {icon:createLabelIcon("labelClass","干城站")}).addTo(mymap);
+    L.marker(new L.LatLng(24.170675, 120.637357), {icon:createLabelIcon("labelClass","朝馬站")}).addTo(mymap);
+    L.marker(new L.LatLng(24.05624, 120.43451), {icon:createLabelIcon("labelClass","鹿港站")}).addTo(mymap);
+  </script>
+  <script>
+  var controlBar = L.control.bar('bar',{
+    position:'top',
+    visible:false
+  });
+  controlBar.setContent('<p>友廷老大 生日快樂</p>');
+  mymap.addControl(controlBar);
+  controlBar.on('shown', function () {
+    console.log('Hello control bar!');
+});
+  </script>
+ <script type="text/javascript" src="latlon.json"></script>
+ <script type="text/javascript" src="latlon_backtoTaichung.json"></script>
+
+ <script type="text/javascript" src="go.json"></script>
+  <script type="text/javascript" src="back.json"></script>
+  <script type="text/javascript" src="save.json"></script>
+  <script type="text/javascript" src="disTable.json"></script>
+ 
+  <script>
+
+    console.log(distoNTCU)
+    console.log(temp)
+    var polyline = L.polyline(temp, {color: 'yellow',weight:3}).addTo(mymap);
+    mymap.fitBounds(polyline.getBounds());
+
+    var londonParisRomeBerlinBucarest = temp ;
+    var ar = []
+    for(var i=0;i<60;i++)
+    {
+      ar.push(100)
+    }
+
+    function GetDistance( lat1,  lng1,  lat2,  lng2){
+    var radLat1 = lat1*Math.PI / 180.0;
+    var radLat2 = lat2*Math.PI / 180.0;
+    var a = radLat1 - radLat2;
+    var  b = lng1*Math.PI / 180.0 - lng2*Math.PI / 180.0;
+    var s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a/2),2) +
+    Math.cos(radLat1)*Math.cos(radLat2)*Math.pow(Math.sin(b/2),2)));
+    s = s *6378.137 ;// EARTH_RADIUS;
+    s = Math.round(s * 10000) / 10000;
+    return s;
+    }
+    var mydata2 = JSON.parse(r2);
+    console.log('回程資料:',mydata2);
+
+     var temp2 = [];
+
+
+    for(var i=0;i<mydata2.length;i++)
+    {
+        if(i==0) temp2.push(mydata2[i]);
+        else
+        {
+            if(GetDistance(mydata2[i][0],mydata2[i][1],mydata2[i-1][0],mydata2[i-1][1])>10)
+            {
+                var polyline2 = L.polyline(temp2, {color: '#2894ff',weight: 3}).addTo(mymap);
+                mymap.fitBounds(polyline2.getBounds());
+
+                temp2 = [];
+                console.log('good night')
+            }
+            else
+            {
+                temp2.push(mydata2[i]);
+            }
+
+        }
+    }
+
+  </script>
+
+</body>
+</html>
